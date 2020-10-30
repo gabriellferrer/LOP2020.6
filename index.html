@@ -1,4 +1,3 @@
- 
 var tela = 1;
 var largura = 200;
 var altura = 50;
@@ -7,6 +6,8 @@ var yMenu1 = 85;
 var yMenu2 = 145;
 var yMenu3 = 205;
 let img;
+var vida = 3
+
 
 function preload() {
   img = loadImage('quiet.png');
@@ -40,6 +41,8 @@ function draw() {
   fill(250);
   noStroke();
   text("INICIAR JOGO", 200, 120);
+  textFont('Georgia');
+  text('Tommy in The Woods', 200, 30);
   
   //INSTRUÇÕES
   stroke(200);
@@ -83,17 +86,42 @@ function draw() {
     textStyle(BOLD);
     image(img, 0, 0)
     textAlign(CENTER);
-    textSize(22);
+    textSize(20);
     
   fill(250);
   noStroke();
   text("CRÉDITOS\n \n \nJogo desenvolvido por Gabriel Ferrer\nAluno de Lógica e Programação do\n período remoto 2020.6 na Escola de \nCiências e Tecnologia da UFRN.", 200, 40);
+  
+  textSize(12)
+  fill(250)
+  noStroke()
+  text("Aperte Espaço para Voltar",83, 390)
+    if(keyIsDown(32)){
+      tela = 1
+    }
     
   }
 
 //JOGO EM ANDAMENTO
   if(tela == 3){
     image(img, 0, 0)
+    
+    textSize(15)
+    fill(250)
+    noStroke()
+    text("Vidas: "+vida, 30, 15)
+    
+    if(vida == 0){
+      tela = 5
+    }
+    
+  textSize(12)
+  fill(250)
+  noStroke()
+  text("Aperte Espaço para Voltar",75, 390)
+    if(keyIsDown(32)){
+      tela = 1
+    }
     
     
   }
@@ -104,17 +132,57 @@ if(tela == 4){
     image(img, 0, 0)
     textAlign(CENTER);
     textSize(16);
-    text("INSTRUÇÕES\n\n\nO jogo consiste em ajudar Tommy a encontrar a\n saída da floresta resolvendo algumas contas\n matemáticas. Você terá 3 chances de errar\nantes que Tommy se perca.\n\nPara jogar utilize apenas o mouse", 200, 40)
   
-    textSize(12)
-    fill(250)
-    noStroke()
-    text("Aperte Espaço para Voltar",85, 390)
+  fill(250);
+  noStroke();
+  text("INSTRUÇÕES\n\n\nO jogo consiste em ajudar Tommy a encontrar a\n saída da floresta resolvendo algumas contas\n matemáticas. Você terá 3 chances de errar\nantes que Tommy se perca.\n\nPara jogar utilize apenas o mouse", 200, 40)
+  
+  textSize(12)
+  fill(250)
+  noStroke()
+  text("PRESSIONE ESPAÇO PARA VOLTAR",83, 390)
     if(keyIsDown(32)){
       tela = 1
     }
+}
+  
+//GAME OVER
+if(tela == 5){
+  image(img, 0, 0)
+  textStyle(BOLD);
+  textAlign(CENTER);
+  textSize(28);
+  
+  fill(333)
+  noStroke()
+  text("GAME OVER", 200, 200)
+  textSize(12)
+  text("PRESSIONE ESPAÇO PARA TENTAR NOVAMENTE",200, 395)
+  if(keyIsDown(32)){
+      tela = 1
+    }
+  
+  
+  
+}
+  
+//JOGO GANHO
+if(tela == 6){
+  image(img, 0, 0)
+  textStyle(BOLD);
+  textAlign(CENTER);
+  textSize(22);
+  
+  fill(333)
+  noStroke()
+  text("PARABÉNS! VOCÊ AJUDOU TOMMY\nA ESCAPAR DA FLORESTA!", 200, 200)
+  textSize(12)
+  text("PRESSIONE ESPAÇO PARA JOGAR NOVAMENTE", 200, 395)
+  if(keyIsDown(32)){
+      tela = 1
+    }
+}
 
     
-     }
- }
-   
+ 
+}

@@ -109,12 +109,16 @@ if(tela == 4){
     textStyle(BOLD);
     image(img, 0, 0)
     textAlign(CENTER);
-    textSize(17);
+    textSize(16);
+    text("INSTRUÇÕES\n\n\nO jogo consiste em ajudar Tommy a encontrar a\n saída da floresta resolvendo algumas contas\n matemáticas. Você terá 3 chances de errar\nantes que Tommy se perca.\n\nPara jogar utilize apenas o mouse", 200, 40)
   
-  fill(250);
-  noStroke();
-  text("INSTRUÇÕES\n\n\nO jogo consiste em ajuda Tommy a encontrar a\n saída da floresta resolvendo algumas contas\n matemáticas. Você terá 3 chances de errar\nantes que Tommy se perca na floresta.\n\nPara jogar utilize apenas o mouse", 200, 40)
-}
+    textSize(12)
+    fill(250)
+    noStroke()
+    text("Aperte Espaço para Voltar",85, 390)
+    if(keyIsDown(32)){
+      tela = 1
+    }
 
     
      }

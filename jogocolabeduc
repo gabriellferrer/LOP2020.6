@@ -1,0 +1,114 @@
+var tela = 1;
+var largura = 200;
+var altura = 50;
+var xMenu = 100;
+var yMenu1 = 85;
+var yMenu2 = 145;
+var yMenu3 = 205;
+let img;
+
+function preload() {
+  img = loadImage('quiet.png');
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  textStyle(NORMAL);
+//MENU INICIAL
+  if(tela == 1){
+  image(img, 0, 0)
+  
+  //INICIAR JOGO
+  textAlign(CENTER);
+  textSize(26);
+  
+  stroke(200);
+  fill(35);
+  rect(xMenu, yMenu1, largura, altura, 20);
+    if(mouseX > xMenu && mouseX < xMenu+largura && mouseY > yMenu1 && mouseY < yMenu1+altura){
+      stroke(200);
+      fill(85);
+      rect(xMenu, yMenu1, largura, altura, 20);
+      if(mouseIsPressed){
+       tela = 3
+    }
+  }
+  fill(250);
+  noStroke();
+  text("INICIAR JOGO", 200, 120);
+  
+  //INSTRUÇÕES
+  stroke(200);
+  fill(35);
+  rect(xMenu, yMenu2, largura, altura, 20);
+    if(mouseX > xMenu && mouseX < xMenu+largura && mouseY > yMenu2 && mouseY < yMenu2+altura){
+      stroke(200);
+      fill(85);
+      rect(xMenu, yMenu2, largura, altura, 20);
+      if(mouseIsPressed){
+       tela = 4
+      }
+    }
+  
+  fill(250);
+  noStroke();
+  text("INSTRUÇÕES", 200, 180);
+  
+  //CRÉDITOS
+  stroke(200);
+  fill(35);
+  rect(xMenu, yMenu3, largura, altura, 20);
+    if(mouseX > xMenu && mouseX < xMenu+largura && mouseY > yMenu3 && mouseY < yMenu3+altura){
+      stroke(200);
+      fill(85);
+      rect(xMenu, yMenu3, largura, altura, 20);
+      if(mouseIsPressed){
+       tela = 2
+      }
+    }
+  
+  fill(250);
+  noStroke();
+  text("CRÉDITOS", 200, 240);  
+    
+    
+  }
+  
+//CRÉDITOS
+  if(tela == 2){
+    textStyle(BOLD);
+    image(img, 0, 0)
+    textAlign(CENTER);
+    textSize(22);
+    
+  fill(250);
+  noStroke();
+  text("CRÉDITOS\n \n \nJogo desenvolvido por Gabriel Ferrer\nAluno de Lógica e Programação do\n período remoto 2020.6 na Escola de \nCiências e Tecnologia da UFRN.", 200, 40);
+    
+  }
+
+//JOGO EM ANDAMENTO
+  if(tela == 3){
+    image(img, 0, 0)
+    
+    
+  }
+
+//INSTRUÇÕES
+if(tela == 4){
+    textStyle(BOLD);
+    image(img, 0, 0)
+    textAlign(CENTER);
+    textSize(17);
+  
+  fill(250);
+  noStroke();
+  text("INSTRUÇÕES\n\n\nO jogo consiste em ajuda Tommy a encontrar a\n saída da floresta resolvendo algumas contas\n matemáticas. Você terá 3 chances de errar\nantes que Tommy se perca na floresta.\n\nPara jogar utilize apenas o mouse", 200, 40)
+}
+
+    
+ 
+}

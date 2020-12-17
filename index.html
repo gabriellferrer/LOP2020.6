@@ -15,10 +15,18 @@ var yMenu2 = 145;
 var yMenu3 = 205;
 let img;
 var vida = 3
+var xAlt = 100;
+var xAlt2 = 210
+var yAlt1 = 145;
+var yAlt2 = 205;
+var larAlt = 100;
+var xOP = 200;
+var yOP = 80;
 
 
 function preload() {
   img = loadImage('quiet.png');
+    
 }
 
 function setup() {
@@ -26,8 +34,8 @@ function setup() {
 }
 
 function draw() {
+  //MENU INICIAL
   textStyle(NORMAL);
-//MENU INICIAL
   if(tela == 1){
   image(img, 0, 0)
   
@@ -95,7 +103,7 @@ function draw() {
     image(img, 0, 0)
     textAlign(CENTER);
     textSize(20);
-    
+        
   fill(250);
   noStroke();
   text("CRÉDITOS\n \n \nJogo desenvolvido por Gabriel Ferrer\nAluno de Lógica e Programação do\n período remoto 2020.6 na Escola de \nCiências e Tecnologia da UFRN.", 200, 40);
@@ -103,7 +111,7 @@ function draw() {
   textSize(12)
   fill(250)
   noStroke()
-  text("Aperte Espaço para Voltar",83, 390)
+  text("PRESSIONE ESPAÇO PARA VOLTAR",200, 390)
     if(keyIsDown(32)){
       tela = 1
     }
@@ -112,12 +120,58 @@ function draw() {
 
 //JOGO EM ANDAMENTO
   if(tela == 3){
-    image(img, 0, 0)
+    var resp = 64
+    var alt1 = 60
+    var alt2 = 74
+    var alt3 = 70
     
+    image(img, 0, 0)
+    textStyle(NORMAL)
+    textSize(18);
+    fill(250);
+    noStroke();
+    text("ESCOLHA A ALTERNATIVA CORRETA", 200, 120);
+    textStyle(BOLD)
+    text("10 x 8 - 16", xOP, yOP)
+    text("NÍVEL 1", xOP, yOP-30)
+    
+    //POSIÇÕES DAS ALTERNATIVAS   
+    stroke(200);
+    fill(35);    
+    rect(xAlt, yAlt1, larAlt, altura, 20);
+    rect(xAlt, yAlt2, larAlt, altura, 20);
+    rect(xAlt2, yAlt1, larAlt, altura, 20);
+    rect(xAlt2, yAlt2, larAlt, altura, 20);
+    
+    textSize(15);
+    fill(250);
+    noStroke();
+    text(resp, xAlt+45, yAlt1+30)
+    
+    textSize(15);
+    fill(250);
+    noStroke();
+    text(alt1, xAlt2+45, yAlt1+30)
+    
+    textSize(15);
+    fill(250);
+    noStroke();
+    text(alt2, xAlt+45, yAlt2+30)
+    
+    textSize(15);
+    fill(250);
+    noStroke();
+    text(alt3, xAlt2+45, yAlt2+30)
+    
+    
+    
+      
+    //VIDAS   
+    textStyle(NORMAL)
     textSize(15)
     fill(250)
     noStroke()
-    text("Vidas: "+vida, 30, 15)
+    text("VIDAS: "+vida, 34, 15)
     
     if(vida == 0){
       tela = 5
@@ -126,7 +180,7 @@ function draw() {
   textSize(12)
   fill(250)
   noStroke()
-  text("Aperte Espaço para Voltar",75, 390)
+  text("PRESSIONE ESPAÇO PARA VOLTAR",106, 390)
     if(keyIsDown(32)){
       tela = 1
     }
@@ -148,7 +202,7 @@ if(tela == 4){
   textSize(12)
   fill(250)
   noStroke()
-  text("PRESSIONE ESPAÇO PARA VOLTAR",83, 390)
+  text("PRESSIONE ESPAÇO PARA VOLTAR",200, 390)
     if(keyIsDown(32)){
       tela = 1
     }

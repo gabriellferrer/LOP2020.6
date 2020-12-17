@@ -118,8 +118,28 @@ function draw() {
     
   }
 
-//JOGO EM ANDAMENTO
-  if(tela == 3){
+//INSTRUÇÕES INICIAIS
+  if(tela==3){
+  image(img, 0, 0)
+  textStyle(NORMAL)
+  textAlign(CENTER)
+  textSize(14);
+  fill(250);
+  noStroke();
+  text("Ajude Tommy a resolver alguns\n problemas matemáticos simples\n para ajudá-lo à escapar da floresta! \nPara isto basta clicar com o mouse na \nopção que contém a resposta correta. \nBOA SORTE! ", 200, 120);
+  textAlign(CENTER)
+  textSize(12)
+  fill(250)
+  noStroke()
+  text("PRESSIONE ENTER PARA INICIAR O JOGO",200, 390)
+    if(keyIsDown(ENTER)){
+      tela = 9
+    }
+  }
+  
+  
+  //JOGO
+  if(tela == 9){
     var resp = 64
     var alt1 = 60
     var alt2 = 74

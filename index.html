@@ -131,10 +131,19 @@ function draw() {
   textSize(12)
   fill(250)
   noStroke()
-  text("PRESSIONE ENTER PARA INICIAR O JOGO",200, 390)
+  text("PRESSIONE ENTER PARA INICIAR O JOGO",200, 375)
     if(keyIsDown(ENTER)){
       tela = 9
     }
+  textSize(12)
+  fill(250)
+  noStroke()
+  text("PRESSIONE ESPAÇO PARA VOLTAR",200, 390)
+    if(keyIsDown(32)){
+      tela = 1
+    }
+    
+    
   }
   
   
